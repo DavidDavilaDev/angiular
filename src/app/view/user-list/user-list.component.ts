@@ -7,6 +7,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { UserFormComponent } from '../user-form/user-form.component';
 import { UserService } from 'src/app/service/user.service.service';
+import { EditUserDialogComponent } from 'src/app/edit-user-dialog/edit-user-dialog.component';
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
@@ -71,6 +72,24 @@ export class UserListComponent implements OnInit {
             console.log('Error deleting user:', error);
           }
         );
+      }
+    });
+  }
+
+  openEditUserDialog(user: any): void {
+    const dialogRef = this.dialog.open(EditUserDialogComponent, {
+      width: '400px',
+      data: { ...user }
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        // Lógica para actualizar el usuario en la fuente de datos
+        const index = this.dataSource.data.findIndex(u => u._id === user._id);
+        if (index > -1) {
+          this.dataSource.data[index] = { ...this.dataSource.data[index], ...result };
+          this.dataSource._updateChangeSubscription(); // Para notificar a la tabla del cambio
+        }
       }
     });
   }

@@ -24,6 +24,7 @@ import { ConfirmacionComponent } from './view/confirmacion/confirmacion.componen
 import { UserListComponent } from './view/user-list/user-list.component';
 import { UserFormComponent } from './view/user-form/user-form.component';
 import { AddUserComponent } from './view/add-user/add-user.component';
+import { EditUserDialogComponent } from './edit-user-dialog/edit-user-dialog.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { AddUserComponent } from './view/add-user/add-user.component';
     ConfirmacionComponent,
     UserListComponent,
     UserFormComponent,
-    AddUserComponent
+    AddUserComponent,
+    EditUserDialogComponent
   ],
   imports: [
     BrowserModule,
