@@ -25,6 +25,9 @@ import { UserListComponent } from './view/user-list/user-list.component';
 import { UserFormComponent } from './view/user-form/user-form.component';
 import { AddUserComponent } from './view/add-user/add-user.component';
 import { EditUserDialogComponent } from './edit-user-dialog/edit-user-dialog.component';
+import { LoginComponent } from './view/login/login.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,8 @@ import { EditUserDialogComponent } from './edit-user-dialog/edit-user-dialog.com
     UserListComponent,
     UserFormComponent,
     AddUserComponent,
-    EditUserDialogComponent
+    EditUserDialogComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -56,6 +60,8 @@ import { EditUserDialogComponent } from './edit-user-dialog/edit-user-dialog.com
     MatDialogModule,
     FormsModule,
     ReactiveFormsModule,
+    MatCardModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

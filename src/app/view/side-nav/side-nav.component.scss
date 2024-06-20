@@ -1,10 +1,9 @@
 mat-toolbar {
-  background-color: #e100cf;
   color: #ffffff;
 }
 
 mat-sidenav-container {
-  background-color: #f2f2f2;
+  background-color: #424242;
 }
 
 mat-nav-list a {
@@ -12,10 +11,6 @@ mat-nav-list a {
   text-decoration: none;
 }
 
-mat-nav-list a:hover {
-  background-color: #e5e5e5;
-  color: #333;
-}
 
 .example-container {
   height: 100%;
@@ -25,3 +20,12 @@ mat-nav-list a:hover {
   flex: 1 1 auto;
 }
 
+.glass {
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba(85, 31, 135, 0.37);
+  backdrop-filter: blur( 7px );
+  -webkit-backdrop-filter: blur( 7px );
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+@import "~@angular/material/prebuilt-themes/purple-green.css";

@@ -1,60 +1,67 @@
 <!-- src/app/view/add-user/add-user.component.html -->
 <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
-  <div>
-    <label for="username">Username:</label>
-    <input id="username" formControlName="username" required>
-    <div *ngIf="userForm.get('username')?.touched && userForm.get('username')?.invalid">
+  <mat-form-field appearance="fill">
+    <mat-label>Username</mat-label>
+    <input matInput id="username" formControlName="username" required>
+    <mat-error *ngIf="userForm.get('username')?.touched && userForm.get('username')?.invalid">
       Username is required.
-    </div>
-  </div>
-  <div>
-    <label for="name">Name:</label>
-    <input id="name" formControlName="name">
-  </div>
-  <div>
-    <label for="lastName">Last Name:</label>
-    <input id="lastName" formControlName="lastName">
-  </div>
-  <div>
-    <label for="email">Email:</label>
-    <input id="email" formControlName="email" type="email" required>
-    <div *ngIf="userForm.get('email')?.touched && userForm.get('email')?.invalid">
-      <div *ngIf="userForm.get('email')?.errors?.['required']">Email is required.</div>
-      <div *ngIf="userForm.get('email')?.errors?.['email']">Invalid email address.</div>
-    </div>
-  </div>
-  <div>
-    <label for="phone">Phone:</label>
-    <input id="phone" formControlName="phone" required>
-    <div *ngIf="userForm.get('phone')?.touched && userForm.get('phone')?.invalid">
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Name</mat-label>
+    <input matInput id="name" formControlName="name">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Last Name</mat-label>
+    <input matInput id="lastName" formControlName="lastName">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput id="email" formControlName="email" type="email" required>
+    <mat-error *ngIf="userForm.get('email')?.touched && userForm.get('email')?.invalid">
+      <span *ngIf="userForm.get('email')?.errors?.['required']">Email is required.</span>
+      <span *ngIf="userForm.get('email')?.errors?.['email']">Invalid email address.</span>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Phone</mat-label>
+    <input matInput id="phone" formControlName="phone" required>
+    <mat-error *ngIf="userForm.get('phone')?.touched && userForm.get('phone')?.invalid">
       Phone is required.
-    </div>
-  </div>
-  <div>
-    <label for="password">Password:</label>
-    <input id="password" formControlName="password" type="password" required>
-    <div *ngIf="userForm.get('password')?.touched && userForm.get('password')?.invalid">
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Password</mat-label>
+    <input matInput id="password" formControlName="password" type="password" required>
+    <mat-error *ngIf="userForm.get('password')?.touched && userForm.get('password')?.invalid">
       Password is required.
-    </div>
-  </div>
-  <div>
-    <label for="role">Role:</label>
-    <input id="role" formControlName="role" required>
-    <div *ngIf="userForm.get('role')?.touched && userForm.get('role')?.invalid">
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Role</mat-label>
+    <input matInput id="role" formControlName="role" required>
+    <mat-error *ngIf="userForm.get('role')?.touched && userForm.get('role')?.invalid">
       Role is required.
-    </div>
-  </div>
-  <div>
-    <label for="status">Status:</label>
-    <input id="status" formControlName="status" type="checkbox">
-  </div>
-  <div>
-    <label for="idClient">Client ID:</label>
-    <input id="idClient" formControlName="idClient">
-  </div>
-  <div>
-    <label for="deleteDate">Delete Date:</label>
-    <input id="deleteDate" formControlName="deleteDate" type="date">
-  </div>
-  <button type="submit">Save</button>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-checkbox id="status" formControlName="status">Status</mat-checkbox>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Client ID</mat-label>
+    <input matInput id="idClient" formControlName="idClient">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Delete Date</mat-label>
+    <input matInput id="deleteDate" formControlName="deleteDate" type="date">
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">Save</button>
 </form>

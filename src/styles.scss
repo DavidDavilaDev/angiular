@@ -1,6 +1,12 @@
 /* You
 can add global styles to this file, and also import other style files */
 
+@import "~@angular/material/prebuilt-themes/purple-green.css";
+
+body {
+  background-color: #424242;
+}
+
 @media only screen and (min-width: 680px){
   .col.sm-1 {width: 8.33%;}
   .col.sm-2 {width: 16.66%;}

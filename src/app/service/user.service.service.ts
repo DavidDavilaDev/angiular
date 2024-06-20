@@ -8,6 +8,7 @@ import { User } from 'src/app/model/user'; // Ajusta la ruta según tu estructur
 })
 export class UserService {
   private apiUrl = 'http://localhost:5000/api/user';
+  loginUrl = "http://localhost:5000/api/user/login";
 
   constructor(private http: HttpClient) {}
 
@@ -29,5 +30,9 @@ export class UserService {
 
   deleteUser(id: string): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
+  
+  login(credentials: { username: string, password: string }): Observable<any> {
+    return this.http.post<any>(this.loginUrl, credentials);
   }
 }

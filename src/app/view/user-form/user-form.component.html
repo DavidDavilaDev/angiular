@@ -1,56 +1,43 @@
-<!-- src/app/user-form/user-form.component.html -->
-<form [formGroup]="userForm" (ngSubmit)="save()">
-  <div>
-    <label for="username">Username:</label>
-    <input id="username" formControlName="username" required>
-    <div *ngIf="userForm.get('username')?.touched && userForm.get('username')?.invalid">
-      Username is required.
-    </div>
+<h2 mat-dialog-title *ngIf="!data">Agregar Usuario</h2>
+<h2 mat-dialog-title *ngIf="data">Editar Usuario</h2>
+<mat-dialog-content>
+<form [formGroup]="userForm"> 
+  <div class="example-container">
+    <mat-form-field>
+      <mat-label>USERNAME</mat-label>
+      <input matInput placeholder="USERNAME" formControlName="username">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>NOMBRE</mat-label>
+      <input matInput placeholder="NOMBRE" formControlName="name">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>APELLIDO</mat-label>
+      <input matInput placeholder="APELLIDO" formControlName="lastName">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>EMAIL</mat-label>
+      <input matInput placeholder="EMAIL" formControlName="email">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>PHONE</mat-label>
+      <input matInput placeholder="PHONE" formControlName="phone">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>ROLE</mat-label>
+      <input matInput placeholder="ROLE" formControlName="role">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>PASSWORD</mat-label>
+      <input matInput placeholder="PASSWORD" formControlName="password">
+    </mat-form-field>
   </div>
-  <div>
-    <label for="name">Name:</label>
-    <input id="name" formControlName="name">
-  </div>
-  <div>
-    <label for="lastName">Last Name:</label>
-    <input id="lastName" formControlName="lastName">
-  </div>
-  <div>
-    <label for="email">Email:</label>
-    <input id="email" formControlName="email" type="email" required>
-    <div *ngIf="userForm.get('email')?.touched && userForm.get('email')?.invalid">
-      <div *ngIf="userForm.get('email')?.errors?.['required']">Email is required.</div>
-      <div *ngIf="userForm.get('email')?.errors?.['email']">Invalid email address.</div>
-    </div>
-  </div>
-  <div>
-    <label for="phone">Phone:</label>
-    <input id="phone" formControlName="phone" required>
-    <div *ngIf="userForm.get('phone')?.touched && userForm.get('phone')?.invalid">
-      Phone is required.
-    </div>
-  </div>
-  <div>
-    <label for="password">Password:</label>
-    <input id="password" formControlName="password" type="password" required>
-    <div *ngIf="userForm.get('password')?.touched && userForm.get('password')?.invalid">
-      Password is required.
-    </div>
-  </div>
-  <div>
-    <label for="role">Role:</label>
-    <input id="role" formControlName="role" required>
-    <div *ngIf="userForm.get('role')?.touched && userForm.get('role')?.invalid">
-      Role is required.
-    </div>
-  </div>
-  <div>
-    <label for="status">Status:</label>
-    <input id="status" formControlName="status" type="checkbox">
-  </div>
-  <div>
-    <label for="idClient">Client ID:</label>
-    <input id="idClient" formControlName="idClient">
-  </div>
-  <button type="submit">Save</button>
 </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-raised-button (click)="save()">Guardar</button>
+  <button mat-raised-button color="warn" mat-dialog-close="true">Cancelar</button>
+</mat-dialog-actions>
