@@ -31,7 +31,7 @@
     flex: 1;
     margin-left: 20px; /* Margen a la izquierda */
     position: sticky; /* Mantener fijo durante el scroll */
-    top: 55px; /* Espacio desde la parte superior */
+    top: 80px; /* Espacio desde la parte superior */
     align-self: flex-start; /* Alinear al principio */
   }
   
@@ -44,11 +44,15 @@
     width: 100%;
   }
   
-  .mat-form-field {
-    font-size: 14px;
-    width: 100%;
+  .custom-mat-field {
+    width: 100%; /* Asegura que el mat-form-field ocupe todo el ancho disponible */
     margin-top: 15px;
   }
+  
+  .custom-mat-select {
+    width: 100%; /* Asegura que el mat-select ocupe todo el ancho disponible */
+  }
+  
   
   td {
     width: 10%;
@@ -60,14 +64,10 @@
   }
   
   .red-button, .red-button2 {
-    background-color: red;
     color: white;
+    background-color: #73e8aeb7;
     display: flex;
     width: 100%;
-  }
-  
-  .red-button:hover, .red-button2:hover {
-    background-color: rgb(167, 2, 2); /* Cambiar a un rojo más oscuro al hacer hover */
   }
   
   .product-image {
@@ -102,6 +102,7 @@
   .order-item {
     margin-bottom: 10px; /* Reducido */
   }
+
   
 
   @import "~@angular/material/prebuilt-themes/purple-green.css";

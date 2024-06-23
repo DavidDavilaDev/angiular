@@ -18,6 +18,9 @@ export class VentasComponent implements OnInit {
 
   productList!: MatTableDataSource<Producto>;
   products: Producto[] = [];  // Array to hold all products
+  subtotal: number = 0;  
+  iva: number = 0;   
+  productQuantities: { [key: string]: number } = {};
 
   constructor(private productService: ProductoService, public dialog: MatDialog) { }
 
@@ -35,5 +38,26 @@ export class VentasComponent implements OnInit {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  // Method to handle addition of product price to subtotal
+  addToSubtotal(product: Producto) {
+    this.subtotal += product.price;
+    this.updateIVA();
+    if (this.productQuantities[product.name]) {
+      this.productQuantities[product.name] += 1;
+    } else {
+      this.productQuantities[product.name] = 1;
+    }
+  }
+
+  // Method to calculate the IVA
+  updateIVA() {
+    this.iva = this.subtotal * 0.16;
+  }
+
+  // Method to get the list of product names
+  getProductNames(): string[] {
+    return Object.keys(this.productQuantities);
   }
 }

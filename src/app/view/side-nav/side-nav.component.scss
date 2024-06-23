@@ -4,7 +4,6 @@ mat-toolbar {
 
 mat-sidenav-container {
   background-color: #424242;
-  position: sticky;
 }
 
 mat-nav-list a {
@@ -12,7 +11,9 @@ mat-nav-list a {
   text-decoration: none;
 }
 
-
+.navigation {
+  position: sticky;
+}
 
 .example-container {
   height: 100%;
@@ -29,5 +30,16 @@ mat-nav-list a {
   -webkit-backdrop-filter: blur( 7px );
   border: 1px solid rgba( 255, 255, 255, 0.18 );
   
+  position: fixed; /* Fijar el mat-toolbar */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Asegurarse de que esté por encima del resto del contenido */
 }
+
+.navigation {
+  position: sticky; /* Mantener el mat-sidenav-container fijo */
+  top: 0; /* Pegarlo al borde superior */
+}
+
 

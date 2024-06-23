@@ -23,7 +23,7 @@
               </div>
             </mat-card-content>
             <mat-card-actions>
-              <button mat-stroked-button class="red-button2"><mat-icon style="margin-right: 5px;">shopping_cart</mat-icon> Añadir</button>
+              <button mat-stroked-button class="red-button2" (click)="addToSubtotal(producto)"><mat-icon style="margin-right: 5px;">shopping_cart</mat-icon> Añadir</button>
             </mat-card-actions>
           </mat-card>
         </ng-container>
@@ -37,20 +37,27 @@
           </mat-card-header>
           <mat-card-content>
             <div class="order-info">
+              <div class="order-item" *ngFor="let productName of getProductNames()">
+                <span class="order-label">Cantidad de {{ productName }}: </span>
+                <span>{{ productQuantities[productName] }}</span> <!-- Display quantity by product name -->
+              </div>
               <div class="order-item">
                 <span class="order-label">Subtotal: </span>
+                <span>{{ subtotal | currency }}</span>
               </div>
               <div class="order-item">
                 <span class="order-label">IVA: </span>
+                <span>{{ iva | currency }}</span>
               </div>
               <div class="order-item">
                 <span class="order-label">Total: </span>
+                <span>{{ (subtotal + iva) | currency }}</span>
               </div>
               <div class="order-item">
                 <span class="order-label">Método de pago: </span>
-                <mat-form-field appearance="fill">
+                <mat-form-field appearance="fill" class="custom-mat-field">
                   <mat-label>Seleccionar método</mat-label>
-                  <mat-select>
+                  <mat-select class="custom-mat-select">
                     <mat-option value="credit">Tarjeta de Crédito</mat-option>
                     <mat-option value="debit">Tarjeta de Débito</mat-option>
                     <mat-option value="paypal">PayPal</mat-option>
