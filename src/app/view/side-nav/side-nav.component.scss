@@ -4,12 +4,14 @@ mat-toolbar {
 
 mat-sidenav-container {
   background-color: #424242;
+  position: sticky;
 }
 
 mat-nav-list a {
   color: #666;
   text-decoration: none;
 }
+
 
 
 .example-container {
@@ -26,6 +28,6 @@ mat-nav-list a {
   backdrop-filter: blur( 7px );
   -webkit-backdrop-filter: blur( 7px );
   border: 1px solid rgba( 255, 255, 255, 0.18 );
+  
 }
 
-@import "~@angular/material/prebuilt-themes/purple-green.css";

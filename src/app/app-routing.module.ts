@@ -3,10 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { ListaProductosComponent } from './view/lista-productos/lista-productos.component';
 import { UserListComponent } from './view/user-list/user-list.component';
 import { LoginComponent } from './view/login/login.component';
+import { VentasComponent } from './view/ventas/ventas.component';
 
 const routes: Routes = [
   { path: 'product', component: ListaProductosComponent },
   { path: 'user', component: UserListComponent },
+  { path: 'sales', component: VentasComponent},
   { path: '', component: LoginComponent }, // Ruta por defecto
 ];
 

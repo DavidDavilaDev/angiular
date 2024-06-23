@@ -7,15 +7,17 @@
     <button mat-button routerLink="/">Inicio</button>
     <button mat-button routerLink="/product">Productos</button>
     <button mat-button routerLink="/user">Usuarios</button> <!-- Nuevo botón para la ruta de usuarios -->
+    <button mat-button routerLink="/sales">Ventas</button>
   </ng-container>
 </mat-toolbar>
 
-<mat-sidenav-container class="example-container" [style.marginTop.px]="isHandset ? 0 : 64">
+<mat-sidenav-container class="" [style.marginTop.px]="isHandset ? 0 : 64">
   <mat-sidenav #sidenav *ngIf="isHandset" mode="over">
     <mat-nav-list>
       <a mat-list-item routerLink="/">Inicio</a>
       <a mat-list-item routerLink="/product">Productos</a>
       <a mat-list-item routerLink="/user">Usuarios</a> <!-- Nuevo enlace para la ruta de usuarios -->
+      <a mat-list-item routerLink="/sales">Ventas</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

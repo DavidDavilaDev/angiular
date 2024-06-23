@@ -1,0 +1,116 @@
+.example-container {
+    height: 100%;
+  }
+  
+  .mat-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .content {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .card-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .product-column {
+    flex: 3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Cuadrícula de 3 columnas */
+    gap: 20px; /* Espacio entre las tarjetas */
+  }
+  
+  .order-column {
+    flex: 1;
+    margin-left: 20px; /* Margen a la izquierda */
+    position: sticky; /* Mantener fijo durante el scroll */
+    top: 55px; /* Espacio desde la parte superior */
+    align-self: flex-start; /* Alinear al principio */
+  }
+  
+  .product-card, .order-card {
+    width: 90%;
+    margin: 10px; /* Margen lateral entre tarjetas */
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+    margin-top: 15px;
+  }
+  
+  td {
+    width: 10%;
+  }
+  
+  th {
+    width: 10%;
+    background-color: rgba(32, 178, 214, 0.749);
+  }
+  
+  .red-button, .red-button2 {
+    background-color: red;
+    color: white;
+    display: flex;
+    width: 100%;
+  }
+  
+  .red-button:hover, .red-button2:hover {
+    background-color: rgb(167, 2, 2); /* Cambiar a un rojo más oscuro al hacer hover */
+  }
+  
+  .product-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .product-info, .order-info {
+    margin-top: 5px; /* Reducido */
+  }
+  
+  .product-card {
+    padding: 15px; /* Reducido */
+  }
+  
+  .mat-card-title {
+    font-size: 19px; /* Reducido */
+  }
+
+  .order-label {
+    margin-bottom: 10px;
+  }
+  
+  .mat-card-content {
+    padding: 10px; /* Reducido */
+  }
+  
+  .product-item {
+    margin-bottom: 5px; /* Reducido */
+  }
+  
+  .order-item {
+    margin-bottom: 10px; /* Reducido */
+  }
+  
+
+  @import "~@angular/material/prebuilt-themes/purple-green.css";
+
+.glass {
+    background: rgba(255, 255, 255, 0.382);
+    box-shadow: 0 8px 32px 0 rgba(31, 135, 114, 0.37);
+    backdrop-filter: blur( 7px );
+    -webkit-backdrop-filter: blur( 7px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+  }
