@@ -4,12 +4,13 @@ import { ListaProductosComponent } from './view/lista-productos/lista-productos.
 import { UserListComponent } from './view/user-list/user-list.component';
 import { LoginComponent } from './view/login/login.component';
 import { VentasComponent } from './view/ventas/ventas.component';
+import { AuthGuard } from './auth.guard'; // Importa el Auth Guard
 
 const routes: Routes = [
-  { path: 'product', component: ListaProductosComponent },
-  { path: 'user', component: UserListComponent },
-  { path: 'sales', component: VentasComponent},
-  { path: '', component: LoginComponent }, // Ruta por defecto
+  { path: 'product', component: ListaProductosComponent, canActivate: [AuthGuard] },
+  { path: 'user', component: UserListComponent, canActivate: [AuthGuard] },
+  { path: 'sales', component: VentasComponent, canActivate: [AuthGuard] },
+  { path: '', component: LoginComponent },
 ];
 
 @NgModule({
