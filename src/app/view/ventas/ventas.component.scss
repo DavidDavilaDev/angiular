@@ -115,3 +115,16 @@
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
   }
+
+
+  /* styles.scss (o tu archivo de estilos principal) */
+.small-icon-button {
+  font-size: 18px; /* Ajusta el tamaño del ícono según sea necesario */
+  width: 32px; /* Ajusta el ancho del botón según sea necesario */
+  height: 32px; /* Ajusta la altura del botón según sea necesario */
+  padding: 0; /* Elimina el relleno interno para reducir aún más el tamaño */
+}
+
+.mat-mdc-button-touch-target {
+  padding: -10px;
+}

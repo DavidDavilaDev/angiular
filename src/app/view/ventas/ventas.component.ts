@@ -18,9 +18,9 @@ export class VentasComponent implements OnInit {
 
   productList!: MatTableDataSource<Producto>;
   products: Producto[] = [];  // Array to hold all products
-  subtotal: number = 0;  
-  iva: number = 0;   
-  productQuantities: { [key: string]: number } = {};
+  subtotal: number = 0;  // Property to hold the subtotal
+  iva: number = 0;  // Property to hold the IVA
+  productQuantities: { [key: string]: number } = {};  // Property to hold quantities by product name
 
   constructor(private productService: ProductoService, public dialog: MatDialog) { }
 
@@ -40,7 +40,7 @@ export class VentasComponent implements OnInit {
     }
   }
 
-  // Method to handle addition of product price to subtotal
+  // Method to handle addition of product price to subtotal and update IVA and product quantities
   addToSubtotal(product: Producto) {
     this.subtotal += product.price;
     this.updateIVA();
@@ -48,6 +48,19 @@ export class VentasComponent implements OnInit {
       this.productQuantities[product.name] += 1;
     } else {
       this.productQuantities[product.name] = 1;
+    }
+  }
+
+   // Method to handle removal of product price from subtotal and update IVA and product quantities
+   removeFromSubtotal(productName: string) {
+    const product = this.products.find(p => p.name === productName);
+    if (product && this.productQuantities[productName] > 0) {
+      this.subtotal -= product.price;
+      this.updateIVA();
+      this.productQuantities[productName] -= 1;
+      if (this.productQuantities[productName] === 0) {
+        delete this.productQuantities[productName];
+      }
     }
   }
 
