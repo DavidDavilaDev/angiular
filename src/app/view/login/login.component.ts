@@ -36,16 +36,13 @@ export class LoginComponent implements OnInit {
     if (this.formGroup.valid) {
       this.userService.login(this.formGroup.value).subscribe(
         (response: any) => {
-          console.log('Token:', response.token);
           this.snackBar.open('Iniciaste sesión correctamente!', 'Cerrar', {
             duration: 3000,
             panelClass: ['success-snackbar']
           });
-          // Redirigir o realizar otras acciones necesarias
           this.router.navigate(['/product']);
         },
         (error: any) => {
-          console.error('Login failed:', error);
           this.snackBar.open('Credenciales incorrectas. Por favor, inténtalo de nuevo.', 'Cerrar', {
             duration: 3000,
             panelClass: ['error-snackbar']
