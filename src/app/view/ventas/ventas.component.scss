@@ -65,7 +65,7 @@
   
   .red-button, .red-button2 {
     color: white;
-    background-color: #73e8aeb7;
+    background-color: #4c7bfdb7;
     display: flex;
     width: 100%;
   }
@@ -105,16 +105,34 @@
 
   
 
-  @import "~@angular/material/prebuilt-themes/purple-green.css";
+  @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 
-.glass {
-    background: rgba(255, 255, 255, 0.382);
-    box-shadow: 0 8px 32px 0 rgba(31, 135, 114, 0.37);
-    backdrop-filter: blur( 7px );
-    -webkit-backdrop-filter: blur( 7px );
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+  .order-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
+  
+  .order-label {
+    margin-right: 10px; /* Ajusta este margen según sea necesario */
+  }
+  
+  .product-quantity {
+    margin-left: 10px; /* Ajusta este margen según sea necesario */
+    display: flex;
+    align-items: center;
+    margin-top: -10px;
+  }
+  
+  .remove-button {
+    display: flex;
+    align-items: center;
+    margin-left: 10px; /* Ajusta este margen según sea necesario */
+    margin-top: -10px;
+  }
+  
+
 
 
   /* styles.scss (o tu archivo de estilos principal) */

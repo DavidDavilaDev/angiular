@@ -19,16 +19,12 @@
     width: 100%;
   }
 
-  .glass {
-    background: rgba( 255, 255, 255, 0.25 );
-    box-shadow: 0 8px 32px 0 rgba(31, 135, 104, 0.37);
-    backdrop-filter: blur( 8px );
-    -webkit-backdrop-filter: blur( 8px );
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
-  }
+  @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+
+
 
   mat-card-title {
-    color: #fff;
+    color: #000000;
     margin-bottom: 10px;
   }
